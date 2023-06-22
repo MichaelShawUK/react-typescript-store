@@ -1,16 +1,4 @@
-interface ProductType {
-  id: string;
-  name: string;
-  brand: string;
-  category: "men" | "women" | "kids";
-  colour: string;
-  description: string;
-  image: string;
-  images: string[];
-  price: number;
-}
-
-const products: ProductType[] = [
+const products = [
   {
     id: "19569409",
     name: "adidas Runfalcon 3.0 Shoes",
@@ -872,3 +860,5 @@ const products: ProductType[] = [
     ],
   },
 ];
+
+export default products;
