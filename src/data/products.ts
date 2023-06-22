@@ -2,7 +2,7 @@ interface ProductType {
   id: string;
   name: string;
   brand: string;
-  category: string;
+  category: "men" | "women" | "kids";
   colour: string;
   description: string;
   image: string;
@@ -59,7 +59,7 @@ const products: ProductType[] = [
       "From a walk in the park to a weekend run with friends, these adidas Ultraboost 1.0 shoes are designed to keep you comfortable. An adidas PRIMEKNIT upper gently hugs your feet while BOOST on the midsole cushions from the first step to the last mile. The Stretchweb outsole flexes naturally for an energised ride, and Continental™ Rubber gives you the traction you need to keep that pep in your step.• Runs small. Order 1 Size larger than your usual size.• Lace closure• adidas PRIMEKNIT textile upper• Fitcounter moulded heel counter• BOOST midsole",
     price: 160,
     brand: "adidas",
-    category: "women",
+    category: "men",
     colour: "grey",
     image:
       "https://i8.amplience.net/t/jpl/jd_product_list?plu=jd_HQ4200_plc&qlt=92&w=363&h=463&v=1&fmt=auto",
@@ -119,7 +119,7 @@ const products: ProductType[] = [
       "From door to trail and back, the TERREX SOULSTRIDE FLOW is your partner to collect miles on longer trail adventures. Using a pillow-like cushioning of lightweight EVA, this trail running shoe is designed to keep you moving. A Continental™ Rubber outsole adds exceptional grip across roots, rocks and dirt and the engineered mesh upper provides optimal zoning for breathability, stretch and a snug fit.• Runs small. Order 1 Size larger than your usual size.• Lace closure• Engineered mesh upper with weldings• Gusseted tongue• REPETITOR midsole",
     price: 120,
     brand: "adidas",
-    category: "women",
+    category: "men",
     colour: "black",
     image:
       "https://i8.amplience.net/t/jpl/jd_product_list?plu=jd_HP5564_plc&qlt=92&w=363&h=463&v=1&fmt=auto",
