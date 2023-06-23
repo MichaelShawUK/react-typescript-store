@@ -44,7 +44,7 @@ const Header = () => {
               <Link to="women">Women</Link>
             </li>
             <li>
-              <Link to="kids">Kids</Link>
+              <Link to="junior">Junior</Link>
             </li>
           </ul>
         </div>
@@ -58,7 +58,7 @@ const Header = () => {
             <Link to="/">Home</Link>
             <Link to="men">Men</Link>
             <Link to="women">Women</Link>
-            <Link to="kids">Kids</Link>
+            <Link to="junior">Junior</Link>
           </div>
         </dialog>
       </StyledHeader>

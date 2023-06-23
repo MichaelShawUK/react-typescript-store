@@ -6,7 +6,7 @@ import { SearchBarProps } from "../types";
 const SearchBar = (props: SearchBarProps) => {
   return (
     <StyledSearchBar className={props.className}>
-      <SearchSVG size={24} />
+      <SearchSVG size={24} color="white" />
       <input
         type="text"
         placeholder="Nike, Adidas, Converse, blue, white..."

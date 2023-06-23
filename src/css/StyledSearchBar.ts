@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 const StyledSearchBar = styled.div`
-  background-color: #eee;
+  background-color: #545f66;
   display: flex;
   justify-content: flex-end;
   padding: 0.5rem;
