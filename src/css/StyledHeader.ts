@@ -79,7 +79,7 @@ const StyledHeader = styled.header`
     margin: 0 1rem;
   }
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 500px) {
     grid-template-columns: 1fr 1fr;
 
     .logo {
