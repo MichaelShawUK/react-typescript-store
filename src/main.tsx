@@ -29,6 +29,10 @@ const router = createBrowserRouter([
         path: "junior",
         element: <ProductRange category="junior" />,
       },
+      {
+        path: "search",
+        element: <ProductRange category="search" />,
+      },
     ],
   },
 ]);

@@ -13,15 +13,19 @@ const ProductRange = (props: ProductRangeProps) => {
 
   return (
     <StyledProductRange>
-      {filterProducts.map((product) => (
-        <ProductListing
-          key={product.id}
-          id={product.id}
-          image={product.image}
-          name={product.name}
-          price={product.price}
-        />
-      ))}
+      {filterProducts.length ? (
+        filterProducts.map((product) => (
+          <ProductListing
+            key={product.id}
+            id={product.id}
+            image={product.image}
+            name={product.name}
+            price={product.price}
+          />
+        ))
+      ) : (
+        <div>No products found</div>
+      )}
     </StyledProductRange>
   );
 };
