@@ -1,7 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+
 import App from "./App.tsx";
 import Home from "./components/Home.tsx";
+// import ProductListing from "./components/ProductListing.tsx";
+import ProductRange from "./components/ProductRange.tsx";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -15,15 +19,15 @@ const router = createBrowserRouter([
       },
       {
         path: "men",
-        element: <div>Mens</div>,
+        element: <ProductRange category="men" />,
       },
       {
         path: "women",
-        element: <div>Womens</div>,
+        element: <ProductRange category="women" />,
       },
       {
         path: "junior",
-        element: <div>Junior</div>,
+        element: <ProductRange category="junior" />,
       },
     ],
   },

@@ -1,4 +1,4 @@
-import women from "../assets/images/women.jpg";
+import hero from "../assets/images/hero.jpg";
 
 import StyledHome from "../css/StyledHome";
 
@@ -7,7 +7,7 @@ import CollectionSlideshow from "./CollectionSlideshow";
 const Home = () => {
   return (
     <StyledHome>
-      <img src={women} className="hero-image"></img>
+      <img src={hero} className="hero-image"></img>
       <div className="hero-text">
         <h1>
           Summer<br></br>

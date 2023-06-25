@@ -2,7 +2,7 @@ interface ProductType {
   id: string;
   name: string;
   brand: string;
-  category: "men" | "women" | "kids";
+  category: "men" | "women" | "junior";
   colour: string;
   description: string;
   image: string;
@@ -618,7 +618,7 @@ const products: ProductType[] = [
       "Refresh their kick collection with these children's Air Max 270 trainers from Nike. In a Black colourway with Volt details, these JD exclusive sneaks have a stretchy sock-like upper for comfy wear. They feature a lace fastening to lock them in and a pull tab to the heel so they can easily take them on-and-off. Underfoot is a spongy foam midsole with a Max Air 270 unit to give them a supportive ride and a rubber outsole for grippy traction. Signed off with the Swoosh to the sidewalls.",
     price: 70,
     brand: "Nike",
-    category: "kids",
+    category: "junior",
     colour: "black",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464089/shoestore/iyznosdeg1lowwynheup.jpg",
@@ -638,7 +638,7 @@ const products: ProductType[] = [
       "Lace up in a Swoosh classic by reppin' these juniors' Dunk High sneakers from Nike. In a White and Red colourway, these OG, b-ball inspired sneaks are made with a smooth, durable leather upper for total comfort. They have a padded, high-top collar for a snug fit, with a lace fastening to lock you in and breathable perforations in the toe for ventilation. Underfoot, they have a soft foam midsole for cushioning and a grippy rubber sole for essential traction. Finished up with Nike branding to the tongue and sidewalls.",
     price: 75,
     brand: "Nike",
-    category: "kids",
+    category: "junior",
     colour: "red",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464095/shoestore/z3eyr4qshw3bu4s1lykc.jpg",
@@ -658,7 +658,7 @@ const products: ProductType[] = [
       "Rep it like the OG with these juniors' Air Force 1 Next Nature sneakers from Nike. Coming in a University Blue, White and Black colourway, these updated classics have a durable synthetic leather upper and stitched detailing. They feature a low-cut, padded ankle collar for a comfy fit, sat above Nike Air cushioning for a plush ride. With heritage hoops pivot circles in the rubber outsole for court-inspired grip, these trainers are finished off with the iconic Swoosh on the sidewalls.",
     price: 80,
     brand: "Nike",
-    category: "kids",
+    category: "junior",
     colour: "blue",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464102/shoestore/mtbnrreiey7xysyavmgy.jpg",
@@ -678,7 +678,7 @@ const products: ProductType[] = [
       "Lace up your little one in a sporty style with these children's Revolution 6 trainers from Nike. Coming in a Pink Foam colourway with Black accents, these treads are made with a smooth, breathable mesh upper for lasting wear. They feature elastic laces and a pull tab at the heel for easy on-off, while a velcro ankle strap locks 'em in. They sit on a lightweight midsole with plush foam cushioning underfoot for essential comfort, while a grippy rubber outsole underfoot offers total traction. Finished up with Nike's iconic Swoosh at the sidewalls, and classic branding at the heel and tongue.",
     price: 35,
     brand: "Nike",
-    category: "kids",
+    category: "junior",
     colour: "black",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464109/shoestore/f0xhcqtceufxlkuoycnc.jpg",
@@ -698,7 +698,7 @@ const products: ProductType[] = [
       "Get them steppin' out in a legendary look with these children's Forum Low trainers from adidas Originals. In a Cloud White and Royal Blue colourway, these low-profile kicks are back from the archives with a premium leather upper. They feature breathable perforations, a tonal lace up fastening and an adjustable Velcro strap for a custom fit. With a cushioned midsole for everyday comfort, these downsized trainers are sat on a chunky outsole with a grippy rubber tread for traction. Finished with adidas' iconic 3-Stripes to the sidewalls, as well as a Trefoil logo.|FY7978",
     price: 60,
     brand: "adidas Originals",
-    category: "kids",
+    category: "junior",
     colour: "white",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464117/shoestore/nbywmc1flwht3m6wyrzy.jpg",
@@ -718,7 +718,7 @@ const products: ProductType[] = [
       "Cop ya' kiddo heat for their feet with these children's Ozweego trainers from adidas Originals. Exclusive to JD, in a Vapour Pink colourway, these sneaks have a lightweight and breathable textile upper for all-day wear. They feature a lace fastening to lock them in and a padded ankle collar for a plush feel. Underfoot is a spongy foam midsole that uses Adiprene and Adiprene+ cushioning for a super-smooth ride. With a rubber outsole for traction, they're finished with the Trefoil to the tongue. | ID6916",
     price: 45,
     brand: "adidas Originals",
-    category: "kids",
+    category: "junior",
     colour: "pink",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464124/shoestore/qc8jwzb3kd17avxefewc.jpg",
@@ -738,7 +738,7 @@ const products: ProductType[] = [
       "Top up your everyday rotation with these juniors' U_Path Run sneakers from adidas Originals. In a Grey Heather colourway, these JD-exclusive kicks have a lightweight textile and synthetic upper, paired with a tonal lace-up closure and a padded collar for a comfy fit. Underfoot, the EVA midsole adds lightweight and responsive cushioning, while the durable rubber outsole keeps you gripped. Finished off with the signature 3-Stripes to the sidewalls. | IF7962",
     price: 50,
     brand: "adidas Originals",
-    category: "kids",
+    category: "junior",
     colour: "grey",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464131/shoestore/lz2zbfaxxjjlwf23fpty.jpg",
@@ -758,7 +758,7 @@ const products: ProductType[] = [
       "Lace up in a OG style with these juniors' Gazelle sneakers from adidas Originals. Landing in an Easy Green colourway, these treads have a soft suede upper for lasting wear. They feature a secure lace fastening with padding around the ankle collar for a snug fit, and a plush OrthoLite sockliner for all-day comfort. THey sit atop a lightweight, low-riding midsole, with a tough rubber outsole underfoot for grippy traction. Signed off with adidas' iconic 3-Stripes to the sidewalls and the legendary Trefoil logo throughout. | HP2865",
     price: 50,
     brand: "adidas Originals",
-    category: "kids",
+    category: "junior",
     colour: "green",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464139/shoestore/tbifymrawrsekkfvihmh.jpg",
@@ -778,7 +778,7 @@ const products: ProductType[] = [
       "Celebrating 50 years on top, adidas Originals have brought back the icon with these juniors' Superstar trainers. In a black colourway, these low-profile sneakers have a premium leather upper with the signature rubber shell toe for durability. They've kept the OG design lines and feature a tonal lace up fastening and a OrthoLite sockliner for all-day cushioning. With a tonal midsole and a grippy rubber tread, these iconic sneaks are finished up with serrated 3-Stripes to the sidewalls, a gold-tone Superstar wordmark and the Trefoil logo to the tongue and heel.|EF5398",
     price: 60,
     brand: "adidas Originals",
-    category: "kids",
+    category: "junior",
     colour: "black",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464145/shoestore/agk2ff1nw3pt7vfzvbsz.jpg",
@@ -798,7 +798,7 @@ const products: ProductType[] = [
       "Inspire the next gen of Sneakerheads with these infants' Air 1 Mid trainers from Jordan. In a Black and Fire Red colourway, these mini sneakers have a layered leather and synthetic upprt, with a flexible tongue and stretchy laces for a secure fit. Featuring a padded ankle collar and a smooth midsole for plush comfort, they're sat on a durable rubber outsole for essential traction. Finished off with Swoosh branding at the sidewalls, the Air Wings badge to the ankle and the iconic Jumpman at the tongue.",
     price: 50,
     brand: "Jordan",
-    category: "kids",
+    category: "junior",
     colour: "black",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464154/shoestore/z9apuhaxqegtmrik7iue.jpg",
@@ -818,7 +818,7 @@ const products: ProductType[] = [
       "Go bold in a Jordan classic with these juniors' Air 1 Low sneakers. Landing in a Black and Lucky Green colour block design across the leather and synthetic panels, these lower-cut kicks have a perforated toe for cool comfort. They're sat on a soft foam midsole that houses signature Air cushioning for a revolutionary ride. With hoops pivot circles to the rubber outsole for OG grip, these trainers are finished off with the iconic Swoosh at the sidewalls and the Air Wings badge to the heel. | Please Note: This item is limited to 2 pairs per person.",
     price: 75,
     brand: "Jordan",
-    category: "kids",
+    category: "junior",
     colour: "green",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464160/shoestore/adfdxgtsf4fjheuarblr.jpg",
@@ -838,7 +838,7 @@ const products: ProductType[] = [
       "Add some courtside style to your tread game with these juniors' Max Aura 4 sneakers from Jordan. In a White, Black and University Red colourway, these sneaks are cut from smooth genuine and synthetic leather for a lasting wear. They feature a lace fastening to lock you in, with a padded, mid-rise collar for added support. Underfoot, they sit on a visible Max Air unit for a super-smooth ride, with a grippy rubber outsole that uses futuristic waves for total traction. Finished up with signature Jordan branding.",
     price: 65,
     brand: "Jordan",
-    category: "kids",
+    category: "junior",
     colour: "white",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464167/shoestore/www9njwkbtprijqmz1ij.jpg",
@@ -858,7 +858,7 @@ const products: ProductType[] = [
       "Throw it back to the '89 OG with these juniors' Air 4 Retro sneakers from Jordan. In a Black colourway with Tour Yellow accents to make them stand out, these iconic kicks have a layered leather and synthetic upper. They feature plastic lace locks to adjust the fit and a sculpted foot frame to keep you stable. Underfoot, a visible Air-Sole unit delivers impact cushioning in the heel, while the rubber outsole has an updated herringbone tread for essentials grip. These sneakers are finished off with signature Jumpman branding to the tongue and heel.",
     price: 130,
     brand: "Jordan",
-    category: "kids",
+    category: "junior",
     colour: "",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464173/shoestore/d0nqp2ltqo7vsyhcwods.jpg",
@@ -872,3 +872,5 @@ const products: ProductType[] = [
     ],
   },
 ];
+
+export default products;
