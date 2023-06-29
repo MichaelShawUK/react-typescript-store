@@ -15,6 +15,11 @@ const GlobalStyle = createGlobalStyle<Record<string, never>>`
   color: #393939;
   }
 
+  body {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
   svg {
     fill: #393939
   }

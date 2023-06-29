@@ -5,6 +5,7 @@ const StyledProductListing = styled.div`
     object-fit: cover;
     display: block;
     width: 100%;
+    max-width: 490px;
   }
 
   .name,

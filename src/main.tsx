@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "search",
-        element: <ProductFilter />,
+        element: <ProductFilter category="search" />,
       },
     ],
   },

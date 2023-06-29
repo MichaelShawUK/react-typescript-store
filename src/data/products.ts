@@ -9,7 +9,7 @@ const products: ProductType[] = [
     price: 50,
     brand: "adidas",
     category: "men",
-    colour: "blue",
+    colour: "black",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687463883/shoestore/ijdacp1kdqmfprgbziqc.jpg",
     images: [
@@ -109,7 +109,7 @@ const products: ProductType[] = [
     price: 120,
     brand: "adidas",
     category: "men",
-    colour: "black",
+    colour: "orange",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687463917/shoestore/nohmvdjtlxeqqueti4ll.jpg",
     images: [
@@ -149,7 +149,7 @@ const products: ProductType[] = [
     price: 145,
     brand: "Nike",
     category: "men",
-    colour: "white",
+    colour: "black",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687463930/shoestore/vdwaf1shsns86yxabpqt.jpg",
     images: [
@@ -169,7 +169,7 @@ const products: ProductType[] = [
     price: 115,
     brand: "Nike",
     category: "men",
-    colour: "grey",
+    colour: "white",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687463936/shoestore/w0dn0ulzq51awfbishev.jpg",
     images: [
@@ -429,7 +429,7 @@ const products: ProductType[] = [
     price: 85,
     brand: "adidas Originals",
     category: "women",
-    colour: "white",
+    colour: "orange",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464027/shoestore/q2tfe64ohyj4gsfoblvg.jpg",
     images: [
@@ -469,7 +469,7 @@ const products: ProductType[] = [
     price: 120,
     brand: "adidas Originals",
     category: "women",
-    colour: "blue",
+    colour: "white",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464041/shoestore/trnxc4yaneg0ix7pxqn3.jpg",
     images: [
@@ -669,7 +669,7 @@ const products: ProductType[] = [
     price: 35,
     brand: "Nike",
     category: "junior",
-    colour: "black",
+    colour: "pink",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464109/shoestore/f0xhcqtceufxlkuoycnc.jpg",
     images: [
@@ -849,7 +849,7 @@ const products: ProductType[] = [
     price: 130,
     brand: "Jordan",
     category: "junior",
-    colour: "yellow",
+    colour: "black",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464173/shoestore/d0nqp2ltqo7vsyhcwods.jpg",
     images: [

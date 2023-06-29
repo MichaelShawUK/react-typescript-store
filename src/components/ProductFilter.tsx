@@ -1,13 +1,19 @@
 import ProductRange from "./ProductRange";
 
+import StyledFilter from "../css/StyledFilter.ts";
+
 import products from "../data/products.ts";
 
-import { ProductFilterProps, FilterProperties, ProductType } from "../types";
+import { FilterProperties, ProductFilterProps, ProductType } from "../types";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ProductFilter = (props: ProductFilterProps) => {
-  const [filter, setFilter] = useState(["white", "men", "Nike"]);
+  const [filter, setFilter] = useState<string[]>([props.category]);
+
+  useEffect(() => {
+    setFilter([props.category]);
+  }, [props]);
 
   const filteredProducts = products.filter((product) => {
     const { category, brand, colour } = product;
@@ -43,21 +49,35 @@ const ProductFilter = (props: ProductFilterProps) => {
   function displayFilters(property: "category" | "brand" | "colour") {
     return Object.entries(properties[property]).map(
       ([criteria, quantity], index) => (
-        <li key={index}>{`${criteria} (${quantity})`}</li>
+        <li
+          key={index}
+          className={filter.includes(criteria) ? "selected" : ""}
+          onClick={toggleFilterCriteria}
+        >{`${criteria} (${quantity})`}</li>
       )
     );
   }
 
+  function toggleFilterCriteria(e: React.MouseEvent) {
+    const criteria = (e.target as HTMLLIElement).textContent?.split(" (")[0];
+    if (criteria && !filter.includes(criteria))
+      setFilter([...filter, criteria]);
+    if (criteria && filter.includes(criteria)) {
+      const index = filter.indexOf(criteria);
+      setFilter([...filter.slice(0, index), ...filter.slice(index + 1)]);
+    }
+  }
+
   return (
     <>
-      <div>
+      <StyledFilter>
         <h3>Category</h3>
         <ul>{displayFilters("category")}</ul>
         <h3>Brand</h3>
         <ul>{displayFilters("brand")}</ul>
         <h3>Colour</h3>
         <ul>{displayFilters("colour")}</ul>
-      </div>
+      </StyledFilter>
       <ProductRange products={filteredProducts} />
     </>
   );
