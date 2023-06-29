@@ -4,10 +4,20 @@ import products from "../data/products.ts";
 
 import { ProductFilterProps, FilterProperties, ProductType } from "../types";
 
+import { useState } from "react";
+
 const ProductFilter = (props: ProductFilterProps) => {
-  const filteredProducts = products.filter(
-    (product) => product.category === props.category
-  );
+  const [filter, setFilter] = useState(["white", "men", "Nike"]);
+
+  const filteredProducts = products.filter((product) => {
+    const { category, brand, colour } = product;
+    for (const criteria of filter) {
+      if (category === criteria || brand === criteria || colour === criteria)
+        continue;
+      else return false;
+    }
+    return true;
+  });
 
   const properties: FilterProperties = {
     category: {},
@@ -30,27 +40,23 @@ const ProductFilter = (props: ProductFilterProps) => {
     calculateProperties(product, "colour");
   });
 
+  function displayFilters(property: "category" | "brand" | "colour") {
+    return Object.entries(properties[property]).map(
+      ([criteria, quantity], index) => (
+        <li key={index}>{`${criteria} (${quantity})`}</li>
+      )
+    );
+  }
+
   return (
     <>
       <div>
         <h3>Category</h3>
-        <ul>
-          {Object.entries(properties.category).map((category, index) => (
-            <li key={index}>{`${category[0]} (${category[1]})`}</li>
-          ))}
-        </ul>
+        <ul>{displayFilters("category")}</ul>
         <h3>Brand</h3>
-        <ul>
-          {Object.entries(properties.brand).map((brand, index) => (
-            <li key={index}>{`${brand[0]} (${brand[1]})`}</li>
-          ))}
-        </ul>
+        <ul>{displayFilters("brand")}</ul>
         <h3>Colour</h3>
-        <ul>
-          {Object.entries(properties.colour).map((colour, index) => (
-            <li key={index}>{`${colour[0]} (${colour[1]})`}</li>
-          ))}
-        </ul>
+        <ul>{displayFilters("colour")}</ul>
       </div>
       <ProductRange products={filteredProducts} />
     </>
