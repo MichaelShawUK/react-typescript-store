@@ -1,6 +1,7 @@
 import ProductRange from "./ProductRange";
 
 import StyledFilter from "../css/StyledFilter.ts";
+import StyledProductFilter from "../css/StyledProductFilter.ts";
 
 import products from "../data/products.ts";
 
@@ -69,7 +70,7 @@ const ProductFilter = (props: ProductFilterProps) => {
   }
 
   return (
-    <>
+    <StyledProductFilter>
       <StyledFilter>
         <h3>Category</h3>
         <ul>{displayFilters("category")}</ul>
@@ -79,7 +80,7 @@ const ProductFilter = (props: ProductFilterProps) => {
         <ul>{displayFilters("colour")}</ul>
       </StyledFilter>
       <ProductRange products={filteredProducts} />
-    </>
+    </StyledProductFilter>
   );
 };
 

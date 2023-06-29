@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle<Record<string, never>>`
   }
 
   body {
-    max-width: 1400px;
+    max-width: 2000px;
     margin: 0 auto;
   }
 
