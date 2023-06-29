@@ -32,6 +32,28 @@ const GlobalStyle = createGlobalStyle<Record<string, never>>`
     display: flex;
   }
 
+  .filter-header {
+    font-weight: bold;
+    display: flex;
+    width: max-content;
+  }
+
+  .filter-header.mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .filter-header.mobile {
+      display: flex;
+      cursor: pointer;
+    }
+
+    .filter-desktop {
+      display: none;
+    }
+  }
+
+  
   
 
   

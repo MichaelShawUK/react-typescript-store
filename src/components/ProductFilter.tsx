@@ -3,11 +3,13 @@ import ProductRange from "./ProductRange";
 import StyledFilter from "../css/StyledFilter.ts";
 import StyledProductFilter from "../css/StyledProductFilter.ts";
 
+import FilterSVG from "../assets/svg/FilterSVG.tsx";
+
 import products from "../data/products.ts";
 
 import { FilterProperties, ProductFilterProps, ProductType } from "../types";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const ProductFilter = (props: ProductFilterProps) => {
   const [filter, setFilter] = useState<string[]>([props.category]);
@@ -69,18 +71,58 @@ const ProductFilter = (props: ProductFilterProps) => {
     }
   }
 
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  function handleClick(e: MouseEvent): void {
+    if ((e.target as HTMLElement).tagName === "BUTTON") {
+      dialogRef.current?.close();
+      window.removeEventListener("click", handleClick);
+    }
+  }
+
+  function showFilter(): void {
+    dialogRef.current?.showModal();
+    window.addEventListener("click", handleClick);
+  }
+
   return (
-    <StyledProductFilter>
-      <StyledFilter>
-        <h3>Category</h3>
-        <ul>{displayFilters("category")}</ul>
-        <h3>Brand</h3>
-        <ul>{displayFilters("brand")}</ul>
-        <h3>Colour</h3>
-        <ul>{displayFilters("colour")}</ul>
-      </StyledFilter>
-      <ProductRange products={filteredProducts} />
-    </StyledProductFilter>
+    <>
+      <div className="filter-header mobile" onClick={showFilter}>
+        <FilterSVG size={24} />
+        FILTER
+      </div>
+      <StyledProductFilter>
+        <StyledFilter>
+          <div className="filter-desktop">
+            <div className="filter-header desktop">
+              <FilterSVG size={24} />
+              FILTER
+            </div>
+            <h3>Category</h3>
+            <ul>{displayFilters("category")}</ul>
+            <h3>Brand</h3>
+            <ul>{displayFilters("brand")}</ul>
+            <h3>Colour</h3>
+            <ul>{displayFilters("colour")}</ul>
+          </div>
+        </StyledFilter>
+        <ProductRange products={filteredProducts} />
+        <dialog ref={dialogRef}>
+          <div className="modal">
+            <StyledFilter>
+              <h3>Category</h3>
+              <ul>{displayFilters("category")}</ul>
+              <h3>Brand</h3>
+              <ul>{displayFilters("brand")}</ul>
+              <h3>Colour</h3>
+              <ul>{displayFilters("colour")}</ul>
+            </StyledFilter>
+            <button>CLOSE</button>
+            <button className="abs-btn">x</button>
+          </div>
+        </dialog>
+      </StyledProductFilter>
+    </>
   );
 };
 
