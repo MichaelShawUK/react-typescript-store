@@ -7,12 +7,18 @@ import FilterSVG from "../assets/svg/FilterSVG.tsx";
 
 import products from "../data/products.ts";
 
-import { FilterProperties, ProductFilterProps, ProductType } from "../types";
+import {
+  FilterProperties,
+  ProductFilterProps,
+  ProductType,
+  ProductRangeSortType,
+} from "../types";
 
 import { useEffect, useState, useRef } from "react";
 
 const ProductFilter = (props: ProductFilterProps) => {
   const [filter, setFilter] = useState<string[]>([props.category]);
+  const [sort, setSort] = useState<ProductRangeSortType>("");
 
   useEffect(() => {
     setFilter([props.category]);
@@ -87,15 +93,29 @@ const ProductFilter = (props: ProductFilterProps) => {
 
   return (
     <>
-      <div className="filter-header mobile" onClick={showFilter}>
-        <FilterSVG size={24} />
-        FILTER
+      <div className="aggregation">
+        <div className="filter-header mobile" onClick={showFilter}>
+          <FilterSVG size={24} color="white" />
+          FILTER
+        </div>
+        <select
+          onChange={(e) => setSort(e.target.value as ProductRangeSortType)}
+          defaultValue={""}
+        >
+          <option disabled value="">
+            Sort Products
+          </option>
+          <option value="PRICE ASC">Price (Low-high)</option>
+          <option value="PRICE DESC">Price (High-low)</option>
+          <option value="NAME ASC">Name (A-Z)</option>
+          <option value="NAME DESC">Name (Z-A)</option>
+        </select>
       </div>
       <StyledProductFilter>
         <StyledFilter>
           <div className="filter-desktop">
             <div className="filter-header desktop">
-              <FilterSVG size={24} />
+              <FilterSVG size={24} color="white" />
               FILTER
             </div>
             <h3>Category</h3>
@@ -106,7 +126,7 @@ const ProductFilter = (props: ProductFilterProps) => {
             <ul>{displayFilters("colour")}</ul>
           </div>
         </StyledFilter>
-        <ProductRange products={filteredProducts} />
+        <ProductRange products={filteredProducts} sort={sort} />
         <dialog ref={dialogRef}>
           <div className="modal">
             <StyledFilter>

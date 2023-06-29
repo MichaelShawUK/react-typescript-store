@@ -26,8 +26,16 @@ export interface SlideshowDataType {
   link: string;
 }
 
+export type ProductRangeSortType =
+  | ""
+  | "NAME ASC"
+  | "NAME DESC"
+  | "PRICE ASC"
+  | "PRICE DESC";
+
 export interface ProductRangeProps {
   products: ProductType[];
+  sort: ProductRangeSortType;
 }
 
 export interface ProductListingProps {

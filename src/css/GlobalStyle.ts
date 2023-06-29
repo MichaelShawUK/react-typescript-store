@@ -35,21 +35,52 @@ const GlobalStyle = createGlobalStyle<Record<string, never>>`
   .filter-header {
     font-weight: bold;
     display: flex;
-    width: max-content;
+    width: 184px;
+    background-color: #545f66;
+    color: white;
+    padding: 0.25rem 0.5rem;
   }
 
   .filter-header.mobile {
     display: none;
+
+  }
+
+  select {
+    width: 184px;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
   }
 
   @media screen and (max-width: 768px) {
     .filter-header.mobile {
       display: flex;
       cursor: pointer;
+      height: 32px;
     }
 
     .filter-desktop {
       display: none;
+    }
+
+
+    .aggregation {
+      display: flex;
+      gap: 1rem;
+      /* position: sticky;
+      top: 0; */
+      
+      select {
+        margin: 0;
+        align-self: center;
+        background-color: #545f66;
+        color: white;
+        padding: 4px;
+      }
+
+      option {
+        color: white;
+      }
     }
   }
 
