@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 
 import App from "./App.tsx";
 import Home from "./components/Home.tsx";
-// import ProductListing from "./components/ProductListing.tsx";
-import ProductRange from "./components/ProductRange.tsx";
+// import ProductRange from "./components/ProductRange.tsx";
+import ProductFilter from "./components/ProductFilter.tsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -19,20 +19,20 @@ const router = createBrowserRouter([
       },
       {
         path: "men",
-        element: <ProductRange category="men" />,
+        element: <ProductFilter category="men" />,
       },
       {
         path: "women",
-        element: <ProductRange category="women" />,
+        element: <ProductFilter category="women" />,
       },
       {
         path: "junior",
-        element: <ProductRange category="junior" />,
+        element: <ProductFilter category="junior" />,
       },
-      {
-        path: "search",
-        element: <ProductRange category="search" />,
-      },
+      // {
+      //   path: "search",
+      //   element: <ProductFilter category="search" />,
+      // },
     ],
   },
 ]);

@@ -1,14 +1,4 @@
-interface ProductType {
-  id: string;
-  name: string;
-  brand: string;
-  category: "men" | "women" | "junior";
-  colour: string;
-  description: string;
-  image: string;
-  images: string[];
-  price: number;
-}
+import { ProductType } from "../types";
 
 const products: ProductType[] = [
   {
@@ -859,7 +849,7 @@ const products: ProductType[] = [
     price: 130,
     brand: "Jordan",
     category: "junior",
-    colour: "",
+    colour: "yellow",
     image:
       "https://res.cloudinary.com/dzpobfxwj/image/upload/v1687464173/shoestore/d0nqp2ltqo7vsyhcwods.jpg",
     images: [
