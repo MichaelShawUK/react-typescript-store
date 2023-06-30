@@ -4,7 +4,8 @@ import MenuSVG from "../assets/svg/MenuSVG";
 import SearchBar from "./SearchBar";
 
 import StyledHeader from "../css/StyledHeader";
-import { useRef, useState } from "react";
+import ProductSearchContext from "../context/ProductSearchContext";
+import { useRef, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -25,6 +26,8 @@ const Header = () => {
       window.removeEventListener("click", handleClick);
     }
   }
+
+  const setSearchQuery = useContext(ProductSearchContext)[1];
 
   return (
     <>
@@ -49,7 +52,11 @@ const Header = () => {
           </ul>
         </div>
         <div className="icons">
-          <SearchSVG onClick={() => setShowSearchBar(!showSearchBar)} />
+          <SearchSVG
+            onClick={() => {
+              setShowSearchBar(!showSearchBar);
+            }}
+          />
           <BagSVG />
           <MenuSVG onClick={showMenu} />
         </div>

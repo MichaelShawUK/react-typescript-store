@@ -32,9 +32,16 @@ const ProductFilter = (props: ProductFilterProps) => {
   }, [props]);
 
   const filteredProducts = products.filter((product) => {
+    if (filter.length === 1 && filter[0] === "") return true;
     const { category, brand, colour } = product;
     for (const criteria of filter) {
-      if (category === criteria || brand === criteria || colour === criteria)
+      if (criteria.toLowerCase() === "men" && category === "women")
+        return false;
+      if (
+        category.toLowerCase().includes(criteria.toLowerCase()) ||
+        brand.toLowerCase().includes(criteria.toLowerCase()) ||
+        colour.toLowerCase().includes(criteria.toLowerCase())
+      )
         continue;
       else return false;
     }
@@ -63,11 +70,15 @@ const ProductFilter = (props: ProductFilterProps) => {
   });
 
   function displayFilters(property: "category" | "brand" | "colour") {
+    const filterLowerCase = filter.map((criteria) => criteria.toLowerCase());
+
     return Object.entries(properties[property]).map(
       ([criteria, quantity], index) => (
         <li
           key={index}
-          className={filter.includes(criteria) ? "selected" : ""}
+          className={
+            filterLowerCase.includes(criteria.toLowerCase()) ? "selected" : ""
+          }
           onClick={toggleFilterCriteria}
         >{`${criteria} (${quantity})`}</li>
       )

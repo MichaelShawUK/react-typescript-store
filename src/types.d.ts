@@ -46,7 +46,7 @@ export interface ProductListingProps {
 }
 
 export interface ProductFilterProps {
-  category: "men" | "women" | "junior" | "search";
+  category: "men" | "women" | "junior" | "";
 }
 
 export interface DynamicProperty {

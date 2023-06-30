@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 
 import App from "./App.tsx";
 import Home from "./components/Home.tsx";
-// import ProductRange from "./components/ProductRange.tsx";
 import ProductFilter from "./components/ProductFilter.tsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -31,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "search",
-        element: <ProductFilter category="search" />,
+        element: <ProductFilter category="" />,
       },
     ],
   },
