@@ -7,6 +7,7 @@ const StyledSearchBar = styled.div`
   padding: 0.5rem;
   border-bottom: 2px solid #393939;
   display: none;
+  margin-bottom: 0.5rem;
 
   input {
     margin-left: 0.5rem;

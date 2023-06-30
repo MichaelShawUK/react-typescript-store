@@ -67,8 +67,6 @@ const GlobalStyle = createGlobalStyle<Record<string, never>>`
     .aggregation {
       display: flex;
       gap: 1rem;
-      /* position: sticky;
-      top: 0; */
       
       select {
         margin: 0;
