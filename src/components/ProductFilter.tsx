@@ -14,11 +14,18 @@ import {
   ProductRangeSortType,
 } from "../types";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
+import ProductSearchContext from "../context/ProductSearchContext.ts";
 
 const ProductFilter = (props: ProductFilterProps) => {
   const [filter, setFilter] = useState<string[]>([props.category]);
   const [sort, setSort] = useState<ProductRangeSortType>("");
+
+  const searchQuery = useContext(ProductSearchContext)[0] as string;
+
+  useEffect(() => {
+    setFilter(searchQuery.split(" "));
+  }, [searchQuery]);
 
   useEffect(() => {
     setFilter([props.category]);
