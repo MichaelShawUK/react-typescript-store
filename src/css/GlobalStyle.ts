@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle<Record<string, never>>`
 
   @font-face {
     font-family: Heebo;
-    src: url("src/assets/fonts/heebo.ttf");
+    src: url(/src/assets/fonts/heebo.ttf);
   }
 
   font-family: Heebo, Arial, Helvetica, sans-serif;

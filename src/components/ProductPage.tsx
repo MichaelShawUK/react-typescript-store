@@ -1,25 +1,45 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import products from "../data/products.ts";
 import StyledProductPage from "../css/StyledProductPage.ts";
-import { Link } from "react-router-dom";
+import SizePicker from "./SizePicker.tsx";
 
 const ProductPage = () => {
   const { productId } = useParams();
   const product = products.find((product) => product.id === productId);
 
+  const navigate = useNavigate();
+
+  const [size, setSize] = useState(0);
+  const [error, setError] = useState(false);
+
+  if (!product) {
+    return <div>Could not find product</div>;
+  }
+
+  function handleAddItem() {
+    if (!size) setError(true);
+    else navigate("/checkout");
+  }
+
   return (
     <StyledProductPage>
       <div className="images">
-        {product?.images.map((image, index) => (
+        {product.images.map((image, index) => (
           <Link to={image} target="_blank" key={index}>
             <img src={image}></img>
           </Link>
         ))}
       </div>
       <div className="info">
-        <div className="name">{product?.name}</div>
-        <div className="price">{`£${product?.price}.00`}</div>
-        <div className="description">{product?.description}</div>
+        <div className="name">{product.name}</div>
+        <div className="price">{`£${product.price}.00`}</div>
+        <div className="description">{product.description}</div>
+        <SizePicker category={product.category} setSize={setSize} size={size} />
+        {error && <div className="error">Select size</div>}
+        <button className="add-btn" onClick={handleAddItem}>
+          ADD TO BASKET
+        </button>
       </div>
     </StyledProductPage>
   );

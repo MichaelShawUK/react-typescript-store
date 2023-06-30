@@ -10,6 +10,11 @@ export interface ProductType {
   price: number;
 }
 
+export interface CartItemType extends ProductType {
+  quantity: number;
+  size: number;
+}
+
 export interface SVGProps {
   size?: number;
   color?: string;
@@ -57,4 +62,10 @@ export interface FilterProperties {
   category: DynamicProperty;
   brand: DynamicProperty;
   colour: DynamicProperty;
+}
+
+export interface SizePickerProps {
+  category: "men" | "women" | "junior";
+  setSize: React.Dispatch<React.SetStateAction<number>>;
+  size: number;
 }
