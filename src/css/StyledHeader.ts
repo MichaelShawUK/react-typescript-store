@@ -57,6 +57,7 @@ const StyledHeader = styled.header`
     font-size: 16px;
     margin-top: 1rem;
     margin-left: 1rem;
+    pointer-events: none;
   }
 
   .icons {
