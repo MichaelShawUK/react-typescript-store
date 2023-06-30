@@ -4,7 +4,9 @@ import MenuSVG from "../assets/svg/MenuSVG";
 import SearchBar from "./SearchBar";
 
 import StyledHeader from "../css/StyledHeader";
-import { useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
+import { CartItemType } from "../types";
+import CartContext from "../context/CartContext";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -25,6 +27,15 @@ const Header = () => {
       window.removeEventListener("click", handleClick);
     }
   }
+
+  const cartItems = useContext(CartContext)[0];
+
+  function getCartItemsCount(cartItems: CartItemType[]): string {
+    if (cartItems.length > 9) return "9+";
+    else return cartItems.length.toString();
+  }
+
+  const cartItemsCount = getCartItemsCount(cartItems as CartItemType[]);
 
   return (
     <>
@@ -54,7 +65,9 @@ const Header = () => {
               setShowSearchBar(!showSearchBar);
             }}
           />
-          <BagSVG />
+          <div className="bag-container" data-cartcount={cartItemsCount}>
+            <BagSVG />
+          </div>
           <MenuSVG onClick={showMenu} />
         </div>
         <dialog ref={dialogRef}>

@@ -44,6 +44,21 @@ const StyledHeader = styled.header`
     display: none;
   }
 
+  .bag-container::before {
+    content: attr(data-cartcount);
+    position: absolute;
+    background-color: #8941f7;
+    color: white;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    text-align: center;
+    opacity: 0.8;
+    font-size: 16px;
+    margin-top: 1rem;
+    margin-left: 1rem;
+  }
+
   .icons {
     justify-self: flex-end;
     display: flex;

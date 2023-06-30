@@ -1,5 +1,7 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import CartContext from "../context/CartContext.ts";
+import { CartItemType } from "../types";
 import products from "../data/products.ts";
 import StyledProductPage from "../css/StyledProductPage.ts";
 import SizePicker from "./SizePicker.tsx";
@@ -7,6 +9,8 @@ import SizePicker from "./SizePicker.tsx";
 const ProductPage = () => {
   const { productId } = useParams();
   const product = products.find((product) => product.id === productId);
+
+  const [cartItems, setCartItems] = useContext(CartContext);
 
   const navigate = useNavigate();
 
@@ -19,7 +23,15 @@ const ProductPage = () => {
 
   function handleAddItem() {
     if (!size) setError(true);
-    else navigate("/checkout");
+    else {
+      if (product) {
+        (setCartItems as React.Dispatch<React.SetStateAction<CartItemType[]>>)([
+          ...(cartItems as CartItemType[]),
+          { ...product, size },
+        ]);
+        // navigate("/checkout");
+      }
+    }
   }
 
   return (

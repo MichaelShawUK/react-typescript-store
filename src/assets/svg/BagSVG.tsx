@@ -7,6 +7,7 @@ const BagSVG = (props: SVGProps) => {
       height={props.size || 32}
       viewBox="0 -960 960 960"
       width={props.size || 32}
+      className="bag-icon"
     >
       <path
         fill={props.color}
