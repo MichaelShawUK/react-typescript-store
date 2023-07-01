@@ -14,8 +14,6 @@ function App() {
     []
   );
 
-  console.log(cartItems);
-
   return (
     <div>
       <CartContext.Provider value={[cartItems, setCartItems]}>

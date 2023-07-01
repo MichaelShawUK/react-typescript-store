@@ -29,7 +29,7 @@ const ProductPage = () => {
           ...(cartItems as CartItemType[]),
           { ...product, size },
         ]);
-        // navigate("/checkout");
+        navigate("/checkout");
       }
     }
   }

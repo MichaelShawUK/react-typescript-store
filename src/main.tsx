@@ -5,6 +5,7 @@ import App from "./App.tsx";
 import Home from "./components/Home.tsx";
 import ProductFilter from "./components/ProductFilter.tsx";
 import ProductPage from "./components/ProductPage.tsx";
+import Checkout from "./components/Checkout.tsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "search",
         element: <ProductFilter category="" />,
+      },
+      {
+        path: "checkout",
+        element: <Checkout />,
       },
       {
         path: "product/:productId",

@@ -66,7 +66,9 @@ const Header = () => {
             }}
           />
           <div className="bag-container" data-cartcount={cartItemsCount}>
-            <BagSVG />
+            <Link to="checkout">
+              <BagSVG />
+            </Link>
           </div>
           <MenuSVG onClick={showMenu} />
         </div>

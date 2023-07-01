@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 
-function useLocalStorage<Type>(storageKey: string, defaultValue: Type) {
+function useLocalStorage<Type>(
+  storageKey: string,
+  defaultValue: Type
+): [Type, React.Dispatch<React.SetStateAction<Type>>] {
   const [value, setValue] = useState(() => {
     const storageValue = localStorage.getItem(storageKey);
     if (storageValue) {
