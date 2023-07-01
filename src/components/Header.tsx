@@ -66,7 +66,7 @@ const Header = () => {
             }}
           />
           <div className="bag-container" data-cartcount={cartItemsCount}>
-            <Link to="checkout">
+            <Link to="basket">
               <BagSVG />
             </Link>
           </div>

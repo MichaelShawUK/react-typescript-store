@@ -25,7 +25,7 @@ const ProductPage = () => {
     else {
       if (product) {
         setCartItems([...cartItems, { ...product, size }]);
-        navigate("/checkout");
+        navigate("/basket");
       }
     }
   }
