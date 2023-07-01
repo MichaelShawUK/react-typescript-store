@@ -21,7 +21,7 @@ const ProductFilter = (props: ProductFilterProps) => {
   const [filter, setFilter] = useState<string[]>([props.category]);
   const [sort, setSort] = useState<ProductRangeSortType>("");
 
-  const searchQuery = useContext(ProductSearchContext)[0] as string;
+  const searchQuery = useContext(ProductSearchContext)[0];
 
   useEffect(() => {
     setFilter(searchQuery.split(" "));

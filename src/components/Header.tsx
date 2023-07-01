@@ -35,7 +35,7 @@ const Header = () => {
     else return cartItems.length.toString();
   }
 
-  const cartItemsCount = getCartItemsCount(cartItems as CartItemType[]);
+  const cartItemsCount = getCartItemsCount(cartItems);
 
   return (
     <>

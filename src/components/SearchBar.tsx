@@ -18,9 +18,7 @@ const SearchBar = (props: SearchBarProps) => {
         placeholder="Nike, Adidas, Converse, blue, white..."
         onInput={(e) => {
           navigate("search");
-          (setSearchQuery as React.Dispatch<React.SetStateAction<string>>)(
-            (e.target as HTMLInputElement).value
-          );
+          setSearchQuery((e.target as HTMLInputElement).value);
         }}
       ></input>
     </StyledSearchBar>

@@ -1,7 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import CartContext from "../context/CartContext.ts";
-import { CartItemType } from "../types";
 import products from "../data/products.ts";
 import StyledProductPage from "../css/StyledProductPage.ts";
 import SizePicker from "./SizePicker.tsx";
@@ -25,10 +24,7 @@ const ProductPage = () => {
     if (!size) setError(true);
     else {
       if (product) {
-        (setCartItems as React.Dispatch<React.SetStateAction<CartItemType[]>>)([
-          ...(cartItems as CartItemType[]),
-          { ...product, size },
-        ]);
+        setCartItems([...cartItems, { ...product, size }]);
         navigate("/checkout");
       }
     }
