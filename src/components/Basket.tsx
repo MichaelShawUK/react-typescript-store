@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import CartContext from "../context/CartContext";
 import StyledBasket from "../css/StyledBasket";
 import { SERVER_URL } from "../data/constants";
 
 const Basket = () => {
   const [cartItems, setCartItems] = useContext(CartContext);
+  const [isLoading, setIsLoading] = useState(false);
 
   function removeItem(e: React.MouseEvent): void {
     const deleteIndex = (e.target as HTMLButtonElement).dataset.index;
@@ -23,6 +24,7 @@ const Basket = () => {
   });
 
   function checkout() {
+    setIsLoading(true);
     fetch(`${SERVER_URL}/checkout`, {
       method: "POST",
       headers: {
@@ -33,7 +35,10 @@ const Basket = () => {
       }),
     })
       .then((res) => res.json())
-      .then((data) => (window.location = data.url))
+      .then((data) => {
+        window.location = data.url;
+        setIsLoading(false);
+      })
       .catch((e) => console.log(e));
   }
 
@@ -73,7 +78,7 @@ const Basket = () => {
       </div>
       {cartItems.length > 0 && (
         <button className="checkout-btn" onClick={checkout}>
-          CHECKOUT
+          {isLoading ? "LOADING..." : "CHECKOUT"}
         </button>
       )}
     </StyledBasket>
