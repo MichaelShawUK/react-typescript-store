@@ -17,6 +17,25 @@ const Basket = () => {
 
   const total = cartItems.reduce((total, current) => total + current.price, 0);
 
+  const checkoutItems = cartItems.map((item) => {
+    return { id: item.id, size: item.size };
+  });
+
+  function checkout() {
+    fetch("http://localhost:3000/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        items: checkoutItems,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => (window.location = data.url))
+      .catch((e) => console.log(e));
+  }
+
   return (
     <StyledBasket>
       <Link to="/search" className="shopping-link">
@@ -52,7 +71,9 @@ const Basket = () => {
         <div className="total">£{total}.00</div>
       </div>
       {cartItems.length > 0 && (
-        <button className="checkout-btn">CHECKOUT</button>
+        <button className="checkout-btn" onClick={checkout}>
+          CHECKOUT
+        </button>
       )}
     </StyledBasket>
   );
