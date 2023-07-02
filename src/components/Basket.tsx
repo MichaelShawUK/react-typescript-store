@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import CartContext from "../context/CartContext";
 import StyledBasket from "../css/StyledBasket";
+import { SERVER_URL } from "../data/constants";
 
 const Basket = () => {
   const [cartItems, setCartItems] = useContext(CartContext);
@@ -22,7 +23,7 @@ const Basket = () => {
   });
 
   function checkout() {
-    fetch("http://localhost:3000/checkout", {
+    fetch(`${SERVER_URL}/checkout`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
