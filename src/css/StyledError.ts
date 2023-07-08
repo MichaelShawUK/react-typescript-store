@@ -8,6 +8,11 @@ const StyledError = styled.div`
   flex-direction: column;
   text-align: center;
 
+  @font-face {
+    font-family: Heebo;
+    src: url("/fonts/heebo.ttf");
+  }
+
   font-family: Heebo, Arial, Helvetica, sans-serif;
   color: #393939;
 
