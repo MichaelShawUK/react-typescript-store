@@ -81,11 +81,7 @@ const Header = () => {
           </div>
         </dialog>
       </StyledHeader>
-      {showSearchBar ? (
-        <SearchBar className="show-searchbar" />
-      ) : (
-        <SearchBar className="" />
-      )}
+      <SearchBar display={showSearchBar} />
     </>
   );
 };

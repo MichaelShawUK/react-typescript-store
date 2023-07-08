@@ -11,7 +11,7 @@ const SearchBar = (props: SearchBarProps) => {
   const setSearchQuery = useContext(ProductSearchContext)[1];
   const navigate = useNavigate();
   return (
-    <StyledSearchBar className={props.className}>
+    <StyledSearchBar $display={props.display}>
       <SearchSVG size={24} color="white" />
       <input
         type="text"

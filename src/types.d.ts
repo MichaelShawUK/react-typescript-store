@@ -21,7 +21,8 @@ export interface SVGProps {
 }
 
 export interface SearchBarProps {
-  className: string;
+  // className: string;
+  display: boolean;
 }
 
 export interface SlideshowDataType {
