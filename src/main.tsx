@@ -6,6 +6,7 @@ import Home from "./components/Home.tsx";
 import ProductFilter from "./components/ProductFilter.tsx";
 import ProductPage from "./components/ProductPage.tsx";
 import Basket from "./components/Basket.tsx";
+import Error from "./components/Error.tsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
     children: [
       {
         index: true,
