@@ -37,7 +37,7 @@ const StyledSizePicker = styled.div`
   }
 
   @media screen and (max-width: 500px) {
-    margin: 0 4px;
+    margin: 1rem 4px 0;
   }
 `;
 
