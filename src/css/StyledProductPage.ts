@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 const StyledProductPage = styled.div`
   max-width: 1200px;
-  margin: 1rem auto 0;
+  margin: 1rem auto;
   display: grid;
   grid-template-columns: 1fr 320px;
   gap: 1rem;
@@ -74,6 +74,12 @@ const StyledProductPage = styled.div`
 
     .images {
       grid-template-columns: 1fr;
+    }
+
+    .name,
+    .price,
+    .description {
+      margin: 0 4px;
     }
   }
 `;

@@ -110,6 +110,12 @@ const StyledBasket = styled.div`
         gap: 0.5rem;
       }
     }
+
+    h3,
+    .info,
+    .costs {
+      margin: 0 4px;
+    }
   }
 `;
 

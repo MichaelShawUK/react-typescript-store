@@ -35,6 +35,10 @@ const StyledSizePicker = styled.div`
     color: white;
     background-color: #8941f7;
   }
+
+  @media screen and (max-width: 500px) {
+    margin: 0 4px;
+  }
 `;
 
 export default StyledSizePicker;
