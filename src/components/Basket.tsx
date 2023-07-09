@@ -48,7 +48,9 @@ const Basket = () => {
         <button>CONTINUE SHOPPING</button>
       </Link>
       <h3>Basket</h3>
-      {cartItems.length === 0 && <div>There are 0 items in your basket</div>}
+      {cartItems.length === 0 && (
+        <div className="no-items">There are 0 items in your basket</div>
+      )}
       {cartItems.map((cartItem, index) => (
         <div key={index} className="item">
           <Link to={`/product/${cartItem.id}`}>

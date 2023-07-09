@@ -113,7 +113,8 @@ const StyledBasket = styled.div`
 
     h3,
     .info,
-    .costs {
+    .costs,
+    .no-items {
       margin: 0 4px;
     }
   }
