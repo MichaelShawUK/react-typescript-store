@@ -4,7 +4,7 @@
 
 This is an e-commerce store that connects to the third-party Stripe API to manage purchase payments.
 
-* Written in TypeScript and created with React
-* ExpressJS backend server to handle purchase requests
-* Routing and navigation handled with React Router
-* Responsive design for mobile and desktop
+:pencil2: Written in TypeScript and created with React
+:moneybag: ExpressJS backend server to handle purchase requests
+:e-mail: Routing and navigation handled with React Router
+:computer: Responsive design for mobile and desktop
